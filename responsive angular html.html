@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="responsiveApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="script.js"></script>
+</head>
+<body ng-controller="MainController">
+    <nav class="navbar">
+        <div class="logo">MyApp</div>
+        <ul class="nav-links">
+            <li ng-repeat="link in navLinks">
+            </li>
+        </ul>
+        <div class="hamburger" ng-click="toggleMenu()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+    </nav>
+    <div class="dashboard">
+        <div class="sidebar" ng-class="{'active': menuActive}">
+            <ul>
+                <li ng-repeat="item in sidebarItems">{{ item }}</li>
+            </ul>
+        </div>
+
+        <div class="content">
+            <h1>Responsive Dashboard</h1>
+            <div class="card-grid">
+                <div class="card" ng-repeat="card in cards">
+                    <h3>{{ card.title }}</h3>
+                    <p>{{ card.content }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
