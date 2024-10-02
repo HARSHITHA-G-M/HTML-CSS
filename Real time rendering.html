@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="dashboardApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Dashboard</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <link rel="stylesheet" href="real time rendering.css">
+</head>
+<body ng-controller="DashboardController">
+    <nav class="navbar">
+        <div class="logo">User Dashboard</div>
+    </nav>
+    <div class="dashboard">
+        <h1>Live User Metrics</h1>
+        <div class="card-grid">
+            <div class="card" ng-repeat="user in users">
+                <h3>{{ user.name }}</h3>
+                <p>Status: {{ user.status }}</p>
+                <p>Messages: {{ user.messages }}</p>
+            </div>
+        </div>
+    </div>
+    <script src="real time rendering.js"></script>
+</body>
+</html>
